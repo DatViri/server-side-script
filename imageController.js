@@ -38,7 +38,6 @@ exports.getAllImage = (req, res) =>{
   imageModel.find({}, (err, result)=>{
     if (err) throw err;
     // object of all the users
-    console.log(result);
     res.send(result);
   });
 };
