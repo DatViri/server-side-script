@@ -12,10 +12,6 @@ router.get('/image/:id', controller.getImage);
 
 router.get('/images', controller.getAllImage);
 
-router.get('/', (req, res) => {
-  res.sendfile(__dirname + '/public/index.html');
-});
-
 module.exports = router;
 
 

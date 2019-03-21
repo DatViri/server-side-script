@@ -22,3 +22,7 @@ mongoose.connect(url).then(()=>{
 // API
 app.use('/api', router);
 
+app.get('/', (req, res) => {
+  res.sendfile(__dirname + '/public/index.html');
+});
+
