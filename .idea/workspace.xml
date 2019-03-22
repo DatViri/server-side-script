@@ -2,8 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9ee3a95-603d-4040-80e8-297a2da52254" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imageController.js" beforeDir="false" afterPath="$PROJECT_DIR$/imageController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/095f0740f9f3335af1d5c75278ff4d8b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/10e5c98cfa2b73c3a8b115dc57152f72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/1343a1172cc401803104713de03cf222" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/14250d1885f23148b6a084548026f3b5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/15b23bac156a4851c7bed8557cb9ba47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/16436c976862829ed13efcd31cb3c7bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/186b19deb52874815f0a44303a7a1189" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/259d2f22ddaa3e8169262913fda87a20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/29dc906065d158f1a65ee96c984442b7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/381ce53484ab0d09801616fbcab41587" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/3d4517547be31ff5f1370d47ac14cbdc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/5505a90e8be7fcec2ed8f388d9109dcd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/70bad207c500d09ae27ed02197ecf504" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/7255e2ab48d01aef77daf62d8749b69a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/72a73468c9bde26c15e961f3adf2c772" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/75b2845f13b831b08bdea00a8345eca6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/7fc5619f45fa289ddbb756c2bff84830" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/82e72b3194190e1aac334816063e9a5b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/82ed1441629c073eeff1e9f0aa7d7fd2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/9de1bf1f9f86879e0219366b8fdbb062" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/a3979b608e685538dfba53da6de953ee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/a49f4cd3b92fdf9e0dc5b8db6b690f90" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/b444f354f02dd1c1eadc78a6510d9b70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/b6ad151eca9d3fbe0e9bb5b851fc34dd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/bcd1b946680cea77ed4094a3bfaa9de9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/c0cbe3da55575565407188e1408bc80a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/dec328fba8ba73b8b78a89b5fbf8776f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/e44ded7392aad6783fc0813171c8612b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/e6e3c40b8942f1d392d313be2f20230b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/e897277d8066ef124b6087c5e54a0453" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/ef7278b1f5ce8403fcbe108474ce82a5" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -14,13 +48,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="week_1" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="72">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -28,26 +65,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imageController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="180">
+              <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imageController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="56" column="21" lean-forward="true" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="72" column="8" lean-forward="true" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+            <state relative-caret-position="339">
+              <caret line="69" column="14" lean-forward="true" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -85,9 +122,9 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/router.js" />
-        <option value="$PROJECT_DIR$/imageController.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/imageController.js" />
       </list>
     </option>
   </component>
@@ -102,8 +139,8 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="124" />
     <option name="width" value="1440" />
     <option name="height" value="696" />
   </component>
@@ -125,6 +162,12 @@
               <item name="week_1" type="b2602c69:ProjectViewProjectNode" />
               <item name="week_1" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="week_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="week_1" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -190,7 +233,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51343000" />
+    <option name="totallyTimeSpent" value="57731000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -202,12 +245,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1440" height="696" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="796" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21987315" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49579832" visible="true" weight="0.21987315" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5042017" side_tool="true" visible="true" weight="0.21987315" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294702" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32998326" />
@@ -217,7 +260,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294702" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.328125" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2963576" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32386363" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.3294702" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -303,13 +346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.15.3/core-modules/fs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="751" column="2" selection-start-line="751" selection-start-column="2" selection-end-line="751" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/appController.js" />
     <entry file="file://$PROJECT_DIR$/models/appModel.js" />
     <entry file="file://$PROJECT_DIR$/routes/appRoutes.js" />
@@ -344,13 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imageModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -368,31 +397,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/router.js">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.15.3/core-modules/fs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
+        <state relative-caret-position="156">
+          <caret line="429" column="2" selection-start-line="429" selection-start-column="2" selection-end-line="429" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imageController.js">
+    <entry file="file://$PROJECT_DIR$/imageModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        <state relative-caret-position="195">
+          <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/small/c9eb3d37bcff10d416892136168723d1.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/small/da8374f98948b7976ce6a922b40eeeae.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mongoose/lib/query.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="1992" column="9" selection-start-line="1992" selection-start-column="9" selection-end-line="1992" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/small/9e3ceff08fe3b979a109c78e943064dd.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="69" column="14" lean-forward="true" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="72">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
+    <entry file="file://$PROJECT_DIR$/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="72" column="8" lean-forward="true" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+        <state relative-caret-position="180">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="56" column="21" lean-forward="true" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
         </state>
       </provider>
     </entry>
