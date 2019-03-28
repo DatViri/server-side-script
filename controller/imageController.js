@@ -8,28 +8,23 @@ exports.uploadImage = (req, res)=> {
   if (req.file == null) {
     res.render('Please select a picture file to submit!');
   } else {
-    const fileName = Date.now() + '.png';
-    const fileSave = './public/uploads/small/' + fileName;
-    console.log(Date.now());
-    sharp(req.file.path).resize(200).toFile(fileSave).then((data) => {
-      //const newImg = fs.readFileSync(fileSave);
-      //const encImg = newImg.toString('base64');
-      console.log('file path ' + req.file.path);
-      const newItem = {
-        category: req.body.category,
-        title: req.body.title,
-        description: req.body.description,
-        contentType: req.file.mimeType,
-        size: req.file.size,
-        //image: new Buffer(encImg),
-        image: fileName,
-      };
-      imageModel.create(newItem).then(() => {
-        console.log(newItem);
-        res.send(newItem);
-      });
-    }).catch((err) => {
-      console.log(err);
+    const fileName = req.file.filename;
+    // const fileSave = './public/uploads/' + fileName;
+    // const newImg = fs.readFileSync(fileSave);
+    // const encImg = newImg.toString('base64');
+    console.log('file path ' + req.file.path);
+    const newItem = {
+      category: req.body.category,
+      title: req.body.title,
+      description: req.body.description,
+      contentType: req.file.mimeType,
+      size: req.file.size,
+      // image: new Buffer(encImg),
+      image: fileName,
+    };
+    imageModel.create(newItem).then(() => {
+      console.log(newItem);
+      res.send(newItem);
     });
   }
 };
@@ -53,8 +48,8 @@ exports.getAllImage = (req, res) =>{
 };
 
 exports.updateImage = (req, res) =>{
-  const filename = req.params.id;
-  imageModel.findOneAndUpdate({'_id': ObjectId(filename)},
+  const id = req.params.id;
+  imageModel.findOneAndUpdate({'_id': ObjectId(id)},
       req.body, {new: true}, (err, result) =>{
         if (err) throw err;
         res.json(result);
@@ -62,8 +57,8 @@ exports.updateImage = (req, res) =>{
 };
 
 exports.deleteImage = (req, res) =>{
-  const filename = req.params.id;
-  imageModel.remove({'_id': ObjectId(filename)}, (err, task) =>{
+  const id = req.params.id;
+  imageModel.remove({'_id': ObjectId(id)}, (err, task) =>{
     if (err) throw err;
     res.json({message: 'Task successfully deleted'});
   });
