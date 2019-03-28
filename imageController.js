@@ -4,14 +4,14 @@ const ObjectId = require('mongodb').ObjectId;
 const imageModel = require('./imageModel');
 const sharp = require('sharp');
 
-exports.uploadImage = (req, res)=> {
+exports.uploadImage = (req, res, next)=> {
   if (req.file == null) {
     res.render('Please select a picture file to submit!');
   } else {
     const fileSave = './public/uploads/small/' + req.file.name;
     sharp(req.file.path).resize(200).toFile(fileSave).then((data) => {
-      const newImg = fs.readFileSync(fileSave);
-      const encImg = newImg.toString('base64');
+      //const newImg = fs.readFileSync(fileSave);
+      //const encImg = newImg.toString('base64');
       console.log('file path ' + req.file.path);
       const newItem = {
         category: req.body.category,
@@ -19,7 +19,8 @@ exports.uploadImage = (req, res)=> {
         description: req.body.description,
         contentType: req.file.mimeType,
         size: req.file.size,
-        image: new Buffer(encImg),
+        //image: new Buffer(encImg),
+        image: req.file.path,
       };
       imageModel.create(newItem).then(() => {
         console.log(newItem);
@@ -35,7 +36,8 @@ exports.getImage = (req, res) =>{
   const filename = req.params.id;
   imageModel.findById({'_id': ObjectId(filename)}, (err, result)=>{
     res.contentType('image/jpeg');
-    res.send(Buffer.from(result.image, 'base64'));
+    //res.send(Buffer.from(result.image, 'base64'));
+    res.send(result.image);
     console.log(Buffer.from(result.image, 'base64'));
   });
 };
