@@ -10,35 +10,35 @@ const userSchema = new Schema({
   salt: String,
 });
 
-userSchema.methods.setPassword = (password) =>{
-  salt = crypto.randomBytes(16).toString('hex');
-  hash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512')
+userSchema.methods.setPassword = function(password) {
+  this.salt = crypto.randomBytes(16).toString('hex');
+  this.hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512')
       .toString('hex');
 };
 
-userSchema.methods.validatePassword = (password) =>{
-  const hash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512')
+userSchema.methods.validatePassword = function(password) {
+  const hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512')
       .toString('hex');
   return hash === hash;
 };
 
-userSchema.methods.generateJWT = () =>{
+userSchema.methods.generateJWT = function() {
   const today = new Date();
   const expirationDate = new Date(today);
   expirationDate.setDate(today.getDate() + 60);
 
   return jwt.sign({
-    email: self,
-    id: self,
+    email: this.email,
+    id: this.id,
     exp: parseInt(expirationDate.getTime() / 1000, 10),
   }, 'secret');
 };
 
-userSchema.methods.toAuthJSON = () =>{
+userSchema.methods.toAuthJSON = function() {
   return {
-    _id: self,
-    email: self,
-    token: self.generateJWT(),
+    _id: this._id,
+    email: this.email,
+    token: this.generateJWT(),
   };
 };
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const router = require('./router/imageRouter');
+const imageRouter = require('./router/imageRouter');
+const userRouter = require('./router/userRouter');
 const mongoose = require('mongoose');
 
 require('./model/userModel');
@@ -16,8 +17,6 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
-app.use(session({secret: 'week2',
-  cookie: {maxAge: 60000}, resave: false, saveUninitialized: false}));
 
 // Connect DB
 mongoose.connect(url).then(()=>{
@@ -28,8 +27,8 @@ mongoose.connect(url).then(()=>{
 });
 
 // API
-app.use('/api', router);
-app.use('/api', router);
+app.use('/api', imageRouter);
+app.use('/api/users', userRouter);
 
 app.get('/', (req, res) => {
   res.sendfile(__dirname + '/public/index.html');

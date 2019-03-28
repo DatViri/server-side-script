@@ -1,23 +1,25 @@
 'use strict';
-const express = require('express');
-const userModel = require('../model/userModel');
+const jwt = require('express-jwt');
 
-exports.uploadUser = (req, res)=> {
-  if (req.body.email &&
-      req.body.username &&
-      req.body.password &&
-      req.body.passwordConf) {
-    const userData = {
-      username: req.body.username,
-      password: req.body.password,
-    };
-    // use schema.create to insert data into the db
-    User.create(userData, (err, user) =>{
-      if (err) {
-        return next(err);
-      } else {
-        return res.send(user);
-      }
-    });
+const getTokenFromHeaders = (req) => {
+  const {headers: {authorization}} = req;
+
+  if (authorization && authorization.split(' ')[0] === 'Token') {
+    return authorization.split(' ')[1];
   }
+  return null;
+};
+
+exports.auth = {
+  required: jwt({
+    secret: 'secret',
+    userProperty: 'payload',
+    getToken: getTokenFromHeaders,
+  }),
+  optional: jwt({
+    secret: 'secret',
+    userProperty: 'payload',
+    getToken: getTokenFromHeaders,
+    credentialsRequired: false,
+  }),
 };
