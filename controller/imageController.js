@@ -1,14 +1,16 @@
 'use strict';
 const fs = require('fs');
 const ObjectId = require('mongodb').ObjectId;
-const imageModel = require('./imageModel');
+const imageModel = require('../model/imageModel');
 const sharp = require('sharp');
 
-exports.uploadImage = (req, res, next)=> {
+exports.uploadImage = (req, res)=> {
   if (req.file == null) {
     res.render('Please select a picture file to submit!');
   } else {
-    const fileSave = './public/uploads/small/' + req.file.name;
+    const fileName = Date.now() + '.png';
+    const fileSave = './public/uploads/small/' + fileName;
+    console.log(Date.now());
     sharp(req.file.path).resize(200).toFile(fileSave).then((data) => {
       //const newImg = fs.readFileSync(fileSave);
       //const encImg = newImg.toString('base64');
@@ -20,11 +22,11 @@ exports.uploadImage = (req, res, next)=> {
         contentType: req.file.mimeType,
         size: req.file.size,
         //image: new Buffer(encImg),
-        image: req.file.path,
+        image: fileName,
       };
       imageModel.create(newItem).then(() => {
         console.log(newItem);
-        res.redirect('/');
+        res.send(newItem);
       });
     }).catch((err) => {
       console.log(err);
@@ -33,12 +35,12 @@ exports.uploadImage = (req, res, next)=> {
 };
 
 exports.getImage = (req, res) =>{
-  const filename = req.params.id;
-  imageModel.findById({'_id': ObjectId(filename)}, (err, result)=>{
-    res.contentType('image/jpeg');
+  const id = req.params.id;
+  imageModel.findById({'_id': ObjectId(id)}, (err, result)=>{
+    //res.contentType('image/jpeg');
     //res.send(Buffer.from(result.image, 'base64'));
-    res.send(result.image);
-    console.log(Buffer.from(result.image, 'base64'));
+    console.log(result);
+    res.json(result);
   });
 };
 
@@ -49,3 +51,21 @@ exports.getAllImage = (req, res) =>{
     res.send(result);
   });
 };
+
+exports.updateImage = (req, res) =>{
+  const filename = req.params.id;
+  imageModel.findOneAndUpdate({'_id': ObjectId(filename)},
+      req.body, {new: true}, (err, result) =>{
+        if (err) throw err;
+        res.json(result);
+      });
+};
+
+exports.deleteImage = (req, res) =>{
+  const filename = req.params.id;
+  imageModel.remove({'_id': ObjectId(filename)}, (err, task) =>{
+    if (err) throw err;
+    res.json({message: 'Task successfully deleted'});
+  });
+};
+

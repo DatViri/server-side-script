@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const router = require('./router');
+const router = require('./router/router');
 const mongoose = require('mongoose');
 
 require('dotenv').config();
@@ -8,9 +8,11 @@ require('dotenv').config();
 const url = process.env.DB_URL;
 const app = express();
 
+
 // Middleware
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 // Connect DB
 mongoose.connect(url).then(()=>{
