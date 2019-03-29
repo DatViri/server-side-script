@@ -62,7 +62,7 @@ exports.login = (req, res, next)=> {
           return res.json({user: user.toAuthJSON()});
         }
 
-        return status(400).info;
+        return res.sendStatus(400);
       })(req, res, next);
 };
 

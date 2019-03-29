@@ -5,7 +5,7 @@ const userRouter = express.Router();
 const controller = require('../controller/userController');
 
 // register
-userRouter.post('/', authController.auth.optional, controller.register);
+userRouter.post('/register', authController.auth.optional, controller.register);
 
 // activate passport configuration and validate a received password with email.
 userRouter.post('/login', authController.auth.optional, controller.login);
