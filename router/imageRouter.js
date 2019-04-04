@@ -20,6 +20,8 @@ imageRouter.post('/image', upload.single('picture'), controller.uploadImage);
 
 imageRouter.get('/image/:id', controller.getImage);
 
+imageRouter.get('/image/category/:category', controller.getImageByCategory);
+
 imageRouter.put('/image/:id', controller.updateImage);
 
 imageRouter.delete('/image/:id', controller.deleteImage);

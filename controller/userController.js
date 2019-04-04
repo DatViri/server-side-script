@@ -1,25 +1,80 @@
 'use strict';
-const jwt = require('express-jwt');
+const express = require('express');
+const Users = require('../model/userModel');
+const passport = require('passport');
 
-const getTokenFromHeaders = (req) => {
-  const {headers: {authorization}} = req;
+exports.register = (req, res, next)=>{
+  const {body: {user}} = req;
 
-  if (authorization && authorization.split(' ')[0] === 'Token') {
-    return authorization.split(' ')[1];
+  if (!user.email) {
+    return res.status(422).json({
+      errors: {
+        email: 'is required',
+      },
+    });
   }
-  return null;
+
+  if (!user.password) {
+    return res.status(422).json({
+      errors: {
+        password: 'is required',
+      },
+    });
+  }
+
+  const finalUser = new Users(user);
+
+  finalUser.setPassword(user.password);
+
+  return finalUser.save()
+      .then(() => res.json({user: finalUser.toAuthJSON()}));
 };
 
-exports.auth = {
-  required: jwt({
-    secret: 'secret',
-    userProperty: 'payload',
-    getToken: getTokenFromHeaders,
-  }),
-  optional: jwt({
-    secret: 'secret',
-    userProperty: 'payload',
-    getToken: getTokenFromHeaders,
-    credentialsRequired: false,
-  }),
+exports.login = (req, res, next)=> {
+  const {body: {user}} = req;
+
+  if (!user.email) {
+    return res.status(422).json({
+      errors: {
+        email: 'is required',
+      },
+    });
+  }
+
+  if (!user.password) {
+    return res.status(422).json({
+      errors: {
+        password: 'is required',
+      },
+    });
+  }
+
+  return passport.authenticate('local',
+      {session: false}, (err, passportUser, info) => {
+        if (err) {
+          return next(err);
+        }
+
+        if (passportUser) {
+          const user = passportUser;
+          user.token = passportUser.generateJWT();
+
+          return res.json({user: user.toAuthJSON()});
+        }
+
+        return res.sendStatus(400);
+      })(req, res, next);
+};
+
+exports.check = (req, res, next)=>{
+  const {payload: {id}} = req;
+
+  return Users.findById(id)
+      .then((user) => {
+        if (!user) {
+          return res.sendStatus(400);
+        }
+
+        return res.json({user: user.toAuthJSON()});
+      });
 };

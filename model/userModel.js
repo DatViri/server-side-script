@@ -19,7 +19,7 @@ userSchema.methods.setPassword = function(password) {
 userSchema.methods.validatePassword = function(password) {
   const hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512')
       .toString('hex');
-  return hash === hash;
+  return this.hash === hash;
 };
 
 userSchema.methods.generateJWT = function() {

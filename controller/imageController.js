@@ -32,8 +32,8 @@ exports.uploadImage = (req, res)=> {
 exports.getImage = (req, res) =>{
   const id = req.params.id;
   imageModel.findById({'_id': ObjectId(id)}, (err, result)=>{
-    //res.contentType('image/jpeg');
-    //res.send(Buffer.from(result.image, 'base64'));
+    // res.contentType('image/jpeg');
+    // res.send(Buffer.from(result.image, 'base64'));
     console.log(result);
     res.json(result);
   });
@@ -43,6 +43,14 @@ exports.getAllImage = (req, res) =>{
   imageModel.find({}, (err, result)=>{
     if (err) throw err;
     // object of all the users
+    res.send(result);
+  });
+};
+
+exports.getImageByCategory = (req, res)=>{
+  const category = req.params.category;
+  imageModel.find({'category': category}, (err, result)=>{
+    if (err) throw err;
     res.send(result);
   });
 };
