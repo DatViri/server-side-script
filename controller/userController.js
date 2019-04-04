@@ -2,12 +2,13 @@
 const express = require('express');
 const Users = require('../model/userModel');
 const passport = require('passport');
+const httpStatus = require('http-status-codes');
 
 exports.register = (req, res, next)=>{
-  const {body: {user}} = req;
+  const {user} = req.body;
 
   if (!user.email) {
-    return res.status(422).json({
+    return res.status(httpStatus.BAD_REQUEST).json({
       errors: {
         email: 'is required',
       },
@@ -15,7 +16,7 @@ exports.register = (req, res, next)=>{
   }
 
   if (!user.password) {
-    return res.status(422).json({
+    return res.status(httpStatus.BAD_REQUEST).json({
       errors: {
         password: 'is required',
       },
@@ -25,16 +26,17 @@ exports.register = (req, res, next)=>{
   const finalUser = new Users(user);
 
   finalUser.setPassword(user.password);
+  console.log(finalUser);
 
   return finalUser.save()
       .then(() => res.json({user: finalUser.toAuthJSON()}));
 };
 
 exports.login = (req, res, next)=> {
-  const {body: {user}} = req;
+  const {user} = req.body;
 
   if (!user.email) {
-    return res.status(422).json({
+    return res.status(httpStatus.BAD_REQUEST).json({
       errors: {
         email: 'is required',
       },
@@ -42,7 +44,7 @@ exports.login = (req, res, next)=> {
   }
 
   if (!user.password) {
-    return res.status(422).json({
+    return res.status(httpStatus.BAD_REQUEST).json({
       errors: {
         password: 'is required',
       },
@@ -52,17 +54,18 @@ exports.login = (req, res, next)=> {
   return passport.authenticate('local',
       {session: false}, (err, passportUser, info) => {
         if (err) {
-          return next(err);
+          return res.status(httpStatus.BAD_REQUEST).json({
+            errors: {
+              msg: err,
+            },
+          });
         }
 
         if (passportUser) {
-          const user = passportUser;
-          user.token = passportUser.generateJWT();
-
-          return res.json({user: user.toAuthJSON()});
+          return res.json({user: passportUser.toAuthJSON()});
         }
 
-        return res.sendStatus(400);
+        return res.sendStatus(httpStatus.BAD_REQUEST);
       })(req, res, next);
 };
 
@@ -72,7 +75,7 @@ exports.check = (req, res, next)=>{
   return Users.findById(id)
       .then((user) => {
         if (!user) {
-          return res.sendStatus(400);
+          return res.sendStatus(httpStatus.BAD_REQUEST);
         }
 
         return res.json({user: user.toAuthJSON()});
