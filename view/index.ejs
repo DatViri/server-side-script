@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MY APP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+<div class="row">
+    <div class="col s6 offset-s3">
+        <ul class="tabs">
+            <li class="tab col s6"><a href="#upload">Add</a></li>
+            <li class="tab col s6"><a href="#view">View</a></li>
+        </ul>
+    </div>
+    <div id="upload" class="col s6 offset-s3">
+        <div class="cotainer">
+            <h1>File Upload</h1>
+            <form action="/api/image" method="POST" enctype="multipart/form-data" >
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="category" name="category">
+                        <label for="category">Category</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="title" name="title">
+                        <label for="title">Title</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="description" name="description">
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+                <div class="file-field input-field">
+                    <div class="btn grey">
+                        <span>File</span>
+                        <input name="picture" type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <label>
+                            <input class="file-path validate" type="text">
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+
+    </div>
+    <div id="view" class="col s6 offset-s3">
+        <div class="card col s6 offset-s3">
+            <form action="/api/images/" method="GET" enctype="multipart/form-data" >
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="keyword">
+                        <label for="keyword">Press to receive all the images json</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="view2" class="col s6 offset-s3">
+        <div class="card col s6 offset-s3 galery">
+
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+<script>
+  $(document).ready(() =>{
+    $('.tabs').tabs();
+  });
+</script>
+</body>
+</html>
